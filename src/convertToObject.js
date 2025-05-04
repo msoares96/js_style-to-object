@@ -13,7 +13,9 @@ function convertToObject(sourceString) {
     if (line.trim() !== '') {
       const splitLine = line.split(':');
 
-      finalObject[splitLine[0].trim()] = splitLine[1].trim();
+      if (line[0] !== undefined && line[1] !== undefined) {
+        finalObject[splitLine[0].trim()] = splitLine[1].trim();
+      }
     }
   }
 
